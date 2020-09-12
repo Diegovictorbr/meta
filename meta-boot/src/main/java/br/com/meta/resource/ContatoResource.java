@@ -42,12 +42,13 @@ public class ContatoResource {
 
     @PutMapping("{idContato}")
     public ResponseEntity put(@RequestBody ContatoUpdate contatoUpdate, @PathVariable String idContato) {
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(this.contatoService.put(contatoUpdate, idContato));
+        this.contatoService.put(contatoUpdate, idContato);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @DeleteMapping("{idContato}")
     public ResponseEntity delete(@PathVariable String idContato) {
         Contato contato = this.contatoService.delete(idContato);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(contato);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

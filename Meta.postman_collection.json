@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "fc39c5b3-2feb-46c3-bae1-13b6998119ab",
+		"name": "Meta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Contato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"2\",\r\n    \"nome\": \"Éverton Ribeiro\",\r\n    \"tipoCanal\": \"Email\",\r\n    \"valor\": \"everton.ribeiro@live.com\",\r\n    \"obs\": \"Joga fácil\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Contato",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Contatos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contato Específico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Contato",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Arrascaeta\",\r\n    \"tipoCanal\": \"Celular\",\r\n    \"valor\": \"21 9 6821 2960\",\r\n    \"obs\": \"Dos melhores\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
