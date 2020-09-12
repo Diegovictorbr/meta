@@ -1,0 +1,44 @@
+<h1 class="mt-4 text-center">
+  <mat-icon style="font-size: 0.7em; cursor: pointer" matTooltip="Voltar" (click)="location.back()">
+    arrow_back
+  </mat-icon>
+
+  {{formState.valueOf() == 0 ? 'Novo Contato' : 'Editar Contato' }}
+</h1>
+
+<div class="card-container text-center">
+  <mat-card class="card" style="width: 50%">
+    <form [formGroup]="formGroup" class="m-2">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome do contato</mat-label>
+        <input type="text" matInput formControlName="nome" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo de Contato</mat-label>
+        <mat-select formControlName="tipoCanal">
+          <mat-option value="Email">Email</mat-option>
+          <mat-option value="Celular">Celular</mat-option>
+          <mat-option value="Fixo">Fixo</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Valor</mat-label>
+        <input type="text" matInput formControlName="valor" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Observação</mat-label>
+        <textarea matInput cols="10" rows="5" formControlName="obs"></textarea>
+      </mat-form-field>
+    </form>
+
+    <div class="text-center">
+      <button mat-raised-button color="primary" (click)="onSubmitBtnClick()" [disabled]="requested">
+        <span class="defaultFont"> {{formState.valueOf() == 0 ? 'Criar contato' : 'Salvar alterações'}} </span>
+      </button>
+    </div>
+
+  </mat-card>
+</div>
